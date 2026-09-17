@@ -1,0 +1,468 @@
+/* ==========================================
+   BAKE MASTERS - Responsive Stylesheet
+   Mobile-first breakpoints layered with
+   max-width overrides for larger screens.
+   Tested targets: 320 / 375 / 425 / 768 / 1024 / 1440 / 1920+
+   ========================================== */
+
+/* ==========================================
+   ULTRA-WIDE (1920px and up)
+   ========================================== */
+@media (min-width: 1920px) {
+    :root {
+        --container-max-width: 1440px;
+    }
+
+    .hero-title {
+        font-size: 5.5rem;
+    }
+
+    .categories-grid {
+        gap: 2.5rem;
+    }
+
+    .products-grid {
+        gap: 2rem;
+    }
+}
+
+/* ==========================================
+   LARGE DESKTOP (1440px and down)
+   ========================================== */
+@media (max-width: 1440px) {
+    .footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ==========================================
+   LAPTOP / SMALL DESKTOP (1024px and down)
+   ========================================== */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 1.25rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.75rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .our-story-inner {
+        grid-template-columns: 1fr 1.25fr;
+        min-height: unset;
+    }
+
+    .our-story-content {
+        gap: 1.75rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==========================================
+   TABLET (768px and down)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* Top bar: hide non-essential items, keep it usable */
+    .top-bar-left {
+        display: none;
+    }
+
+    .top-bar-inner {
+        justify-content: center;
+    }
+
+    .top-bar-right {
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .top-bar-item span,
+    .top-bar-item {
+        font-size: 0.75rem;
+    }
+
+    /* Navigation: switch to hamburger */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: min(320px, 80vw);
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem clamp(1.5rem, 6vw, 2.5rem);
+        box-shadow: var(--shadow-lg);
+        transition: right var(--transition);
+        z-index: 1001;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu a {
+        font-size: 0.9375rem;
+    }
+
+    .nav-cta .btn-whatsapp span,
+    .nav-cta .btn-whatsapp {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.75rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        order: -1;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .best-sellers-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .our-story-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .our-story-image {
+        height: 200px;
+    }
+
+    .our-story-content {
+        padding: clamp(2rem, 6vw, 2.75rem) clamp(1.25rem, 5vw, 1.75rem);
+        gap: 1.75rem;
+    }
+
+    .our-story-text {
+        max-width: none;
+    }
+
+    .cta-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .cta-image {
+        text-align: center;
+        order: -1;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-cake-card {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-cake-image {
+        min-height: 220px;
+    }
+}
+
+/* ==========================================
+   MOBILE LARGE (425px and down)
+   ========================================== */
+@media (max-width: 425px) {
+    .top-bar-right {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .logo-text small {
+        display: none;
+    }
+
+    .nav-cta .btn-whatsapp {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: clamp(2.25rem, 10vw, 3rem);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .category-icon {
+        width: 88px;
+        height: 88px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .footer-legal {
+        gap: 0.5rem 0.875rem;
+    }
+
+    .footer-legal span {
+        display: none;
+    }
+
+    .cake-float {
+        bottom: 18px;
+        right: 18px;
+        height: 46px;
+        max-width: 46px;
+        padding: 0 0.875rem;
+    }
+
+    .cake-float i {
+        font-size: 1.125rem;
+    }
+
+    .scroll-top {
+        width: 38px;
+        height: 38px;
+        bottom: 82px;
+        right: 18px;
+    }
+}
+
+/* ==========================================
+   MOBILE STANDARD (375px and down)
+   ========================================== */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.125rem;
+    }
+
+    .section-eyebrow {
+        font-size: 0.6875rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .best-sellers-title-block h2,
+    .our-story-text h2,
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ==========================================
+   MOBILE SMALL (320px and down)
+   ========================================== */
+@media (max-width: 320px) {
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .category-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   NO HORIZONTAL SCROLL SAFETY NET
+   ========================================== */
+html,
+body {
+    max-width: 100%;
+}
+
+.container,
+.hero-inner,
+.categories-grid,
+.products-grid,
+.footer-grid {
+    max-width: 100%;
+}
+
+/* Best-sellers grid responsive — keep 5 cols as long as possible */
+@media (max-width: 900px) {
+    .best-sellers .products-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 540px) {
+    .best-sellers .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ==========================================
+   WHITE PLUM PAGE - RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+    .wp-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .wp-hero-content {
+        padding-bottom: 0;
+    }
+
+    .wp-hero-tagline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wp-hero-image {
+        justify-content: center;
+    }
+
+    .wp-hero-image img {
+        max-width: 300px;
+    }
+
+    .wp-what-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .wp-what-visual {
+        order: -1;
+    }
+
+    .wp-badge-float {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 72px;
+        height: 72px;
+        font-size: 0.625rem;
+    }
+
+    .wp-compare-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wp-traits {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 425px) {
+    .wp-hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .wp-hero-btns .btn {
+        width: 100%;
+    }
+
+    .wp-story-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .wp-story::before {
+        font-size: 10rem;
+    }
+}
